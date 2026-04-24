@@ -2,6 +2,8 @@ import { Suspense } from "react";
 import { NavBar } from "@/components/nav-bar";
 import { AuthForm } from "@/components/auth-form";
 
+export const dynamic = "force-dynamic";
+
 export default function AuthPage() {
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100">
