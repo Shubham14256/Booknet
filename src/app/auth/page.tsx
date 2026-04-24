@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { NavBar } from "@/components/nav-bar";
 import { AuthForm } from "@/components/auth-form";
 
@@ -12,7 +13,9 @@ export default function AuthPage() {
             Login or create your DevReads account to continue to checkout.
           </p>
         </div>
-        <AuthForm />
+        <Suspense fallback={null}>
+          <AuthForm />
+        </Suspense>
       </main>
     </div>
   );
