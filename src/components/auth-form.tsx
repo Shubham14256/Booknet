@@ -11,7 +11,7 @@ const authSchema = z.object({
   email: z.string().email("Please enter a valid email."),
   password: z.string().min(8, "Password must be at least 8 characters."),
   captcha: z.literal(true, {
-    errorMap: () => ({ message: "Please verify CAPTCHA before continuing." }),
+    error: "Please verify CAPTCHA before continuing.",
   }),
 });
 
