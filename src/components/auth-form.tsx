@@ -10,8 +10,8 @@ import { getSupabaseBrowserClient } from "@/lib/supabase/client";
 const authSchema = z.object({
   email: z.string().email("Please enter a valid email."),
   password: z.string().min(8, "Password must be at least 8 characters."),
-  captcha: z.literal(true, {
-    error: "Please verify CAPTCHA before continuing.",
+  captcha: z.boolean().refine((val) => val === true, {
+    message: "Please verify CAPTCHA before continuing.",
   }),
 });
 
